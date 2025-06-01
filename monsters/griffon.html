@@ -2,11 +2,50 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>グリフォン - ILOVEMONSTER</title>
+  <title>グリフォン | ILOVEMONSTER</title>
+  <style>
+    body { background-color: #1e1e1e; color: #f5f5f5; font-family: sans-serif; padding: 2rem; }
+    img { max-width: 100%; border-radius: 8px; }
+    .lang-switch button { margin: 5px; padding: 6px 12px; background: #444; color: #fff; border: none; cursor: pointer; }
+    .lang-switch button:hover { background: #666; }
+  </style>
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.style.display = (el.dataset.lang === lang) ? 'block' : 'none';
+      });
+    }
+    window.onload = () => switchLang('ja');
+  </script>
 </head>
 <body>
-  <h1>グリフォン</h1>
-  <p>鷲とライオンの合成獣。</p>
-  <p><a href="../index.html">← 戻る</a></p>
+  <div class="lang-switch">
+    <button onclick="switchLang('ja')">日本語</button>
+    <button onclick="switchLang('en')">English</button>
+    <button onclick="switchLang('zh')">中文</button>
+  </div>
+
+  <div data-lang="ja">
+    <h1>グリフォン</h1>
+    <img src="../images/griffon.png" alt="グリフォンの画像">
+    <p>鷲とライオンの合成獣。</p>
+    <p><strong>カテゴリ：</strong>幻獣種</p>
+  </div>
+
+  <div data-lang="en" style="display:none">
+    <h1>Griffon</h1>
+    <img src="../images/griffon.png" alt="Griffon image">
+    <p>A legendary creature: Griffon.</p>
+    <p><strong>Category:</strong> 幻獣種</p>
+  </div>
+
+  <div data-lang="zh" style="display:none">
+    <h1>狮鹫</h1>
+    <img src="../images/griffon.png" alt="狮鹫 图片">
+    <p>狮鹫 是一种传说中的怪物。</p>
+    <p><strong>分类：</strong>幻獣種</p>
+  </div>
+
+  <p><a href="../index.html" style="color: #9cf;">← 戻る</a></p>
 </body>
 </html>
